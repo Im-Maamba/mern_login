@@ -9,24 +9,22 @@ const Landingpage = () => {
         <Row>
           <div className="intro-text">
             <div>
-              <h1 className="title">Hi🤩 There!!!</h1>
-              <p className="subtitle">
-                <i>Have a great day</i>
-              </p>
+              <h1 className="title">hi 😍😍 there!!</h1>
+              <p className="subtitle">Have a great day</p>
             </div>
-            <div className="buttoncontainer">
+            <div className="buttonContainer">
               <a href="/login">
                 <Button size="lg" className="landingbutton">
-                  login
+                  Login
                 </Button>
               </a>
               <a href="/register">
                 <Button
+                  variant="outline-primary"
                   size="lg"
                   className="landingbutton"
-                  variant="outline-primary"
                 >
-                  SignUp
+                  Signup
                 </Button>
               </a>
             </div>

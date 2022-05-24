@@ -1,17 +1,20 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar collapseOnSelect expand="lg" bg="warning" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Nikil😍" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">My profile</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">logout</NavDropdown.Item>
+        <Navbar.Brand href="/">Crystal Code Labs❤</Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="m-auto"></Nav>
+          <Nav>
+            <Nav.Link href="/links">links</Nav.Link>
+            <NavDropdown title="Nikil" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/profile">My Profile</NavDropdown.Item>
+
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
