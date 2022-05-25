@@ -1,9 +1,12 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="warning" variant="dark">
       <Container>
-        <Navbar.Brand href="/">Crystal Code Labs❤</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/">Crystal Code Labs❤</Link>
+        </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

@@ -1,0 +1,14 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+/*
+.color {
+  color: blue;
+  display: inline-block;
+  cursor: pointer;
+}*/
+.margin {
+  margin-bottom: 10px;
+}
