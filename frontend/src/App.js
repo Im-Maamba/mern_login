@@ -1,14 +1,17 @@
 import "./App.css";
 
 import Landingpage from "./screens/landingpage/landingpage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Links from "./screens/links/links";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import Loginpage from "./screens/loginpage/loginpage";
+
+//import Registerscreen from "./screens/registerscreen/registerscreen";
 import Registerpage from "./screens/registerpage/registerpage";
+
 const App = () => (
-  <BrowserRouter>
+  <Router>
     <Header />
     <Routes>
       <Route path="/" element={<Landingpage />} exact />;
@@ -17,7 +20,7 @@ const App = () => (
       <Route path="/links" element={<Links />} />;
     </Routes>
     <Footer />
-  </BrowserRouter>
+  </Router>
 );
 
 export default App;

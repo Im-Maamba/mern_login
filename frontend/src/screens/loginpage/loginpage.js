@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import MainScreen from "../../components/mainscreen/mainscreen";
 import "./loginpage.css";
 import axios from "axios";
+import Loading from "../../components/loading";
+import ErrorMessage from "../../components/errormessage";
 const Loginpage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,11 +33,14 @@ const Loginpage = () => {
       setLoading(false);
     } catch (error) {
       setError(error.response.data.message);
+      setLoading(false);
     }
   };
   return (
     <MainScreen title="LOGIN">
       <div className="loginContainer">
+        {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+        {loading && <Loading />}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
