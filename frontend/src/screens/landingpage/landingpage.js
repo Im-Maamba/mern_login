@@ -10,8 +10,8 @@ const Landingpage = () => {
         <Row>
           <div className="intro-text">
             <div>
-              <h1 className="title">hi 😍😍 there!!</h1>
-              <p className="subtitle">Have a great day</p>
+              <h1 className="title">HeY! 😍😍 NIKIL here!!!</h1>
+              <p className="subtitle">Im-MAAMBA🎶</p>
             </div>
             <div className="buttonContainer">
               <Link to="/login">

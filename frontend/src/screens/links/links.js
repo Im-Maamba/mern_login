@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import "./links.css";
 
 const Links = () => {
@@ -9,8 +9,14 @@ const Links = () => {
         <Row>
           <div className="intro-text">
             <div>
-              <h1 className="title">Under Construction👷‍♂️🚧🚧</h1>
-              <p className="subtitle">Have a great day</p>
+              <h1 className="title">Under Construction👷‍♂️</h1>
+              <p className="subtitle">
+                <a href="https://im-maamba.github.io/omnifood/" target="_blank">
+                  {" "}
+                  <Button>click</Button> to view my static site created
+                </a>
+              </p>
+              <p className="subtitle">Have a great day💖</p>
             </div>
           </div>
         </Row>

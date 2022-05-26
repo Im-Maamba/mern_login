@@ -1,40 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Form, Button, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MainScreen from "../../components/mainscreen/mainscreen";
 import "./loginpage.css";
-import axios from "axios";
+
 import Loading from "../../components/loading";
 import ErrorMessage from "../../components/errormessage";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../actions/userActions";
 const Loginpage = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
-
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/links");
+    }
+  }, [navigate, userInfo]);
   const submitHandler = async (e) => {
     e.preventDefault();
-    try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-      setLoading(true);
-      const { data } = await axios.post(
-        "/api/users/login",
-        { email, password },
-        config
-      );
-
-      console.log(data);
-      localStorage.setItem("userinfo", JSON.stringify(data));
-      setLoading(false);
-    } catch (error) {
-      setError(error.response.data.message);
-      setLoading(false);
-    }
+    dispatch(login(email, password));
   };
   return (
     <MainScreen title="LOGIN">
@@ -68,7 +57,10 @@ const Loginpage = () => {
         </Form>
         <Row className="py-3">
           <Col>
-            New Customer ? <Link to="/register"><p className="blue">Register Here</p></Link>
+            New Customer ?{" "}
+            <Link to="/register">
+              <p className="blue">Register Here</p>
+            </Link>
           </Col>
         </Row>
       </div>
