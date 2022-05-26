@@ -7,3 +7,7 @@
 .margin {
   margin-bottom: 10px;
 }
+.blue {
+  color: blue;
+  display: inline-block;
+}

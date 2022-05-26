@@ -68,7 +68,7 @@ const Loginpage = () => {
         </Form>
         <Row className="py-3">
           <Col>
-            New Customer ? <Link to="/register">Register Here</Link>
+            New Customer ? <Link to="/register"><p className="blue">Register Here</p></Link>
           </Col>
         </Row>
       </div>

@@ -140,7 +140,10 @@ const Registerpage = () => {
         </Form>
         <Row className="py-3">
           <Col>
-            New Customer ? <Link to="/login">Login Here</Link>
+            New Customer ?{" "}
+            <Link to="/login">
+              <p className="blue">Login Here</p>
+            </Link>
           </Col>
         </Row>
       </div>
