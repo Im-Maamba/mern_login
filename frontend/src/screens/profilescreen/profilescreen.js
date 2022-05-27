@@ -19,12 +19,10 @@ const Profilescreen = () => {
 
   const dispatch = useDispatch();
 
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
   const userUpdate = useSelector((state) => state.userUpdate);
   const { loading, error, success } = userUpdate;
+  const userInfo = localStorage.getItem("userInfo");
 
-  //the below code is the one which gives blank page upon rendering
   useEffect(() => {
     if (!userInfo) {
       navigate("/");
@@ -34,9 +32,6 @@ const Profilescreen = () => {
       setPic(userInfo.pic);
     }
   }, [navigate, userInfo]);
-  useEffect(() => {
-    console.log(userInfo);
-  });
 
   const postDetails = (pics) => {
     setPicMessage(null);
