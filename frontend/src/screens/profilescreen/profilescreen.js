@@ -18,10 +18,11 @@ const Profilescreen = () => {
   const [picMessage, setPicMessage] = useState();
 
   const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const userUpdate = useSelector((state) => state.userUpdate);
   const { loading, error, success } = userUpdate;
-  const userInfo = localStorage.getItem("userInfo");
 
   useEffect(() => {
     if (!userInfo) {
