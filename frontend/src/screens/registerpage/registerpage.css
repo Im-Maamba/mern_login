@@ -9,4 +9,5 @@
 .blue {
   color: blue;
   display: inline-block;
+  cursor: pointer;
 }

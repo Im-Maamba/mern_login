@@ -7,6 +7,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
   const logoutHandler = () => {
     dispatch(logout());
     navigate("/");
@@ -21,17 +22,21 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto"></Nav>
-          <Nav>
-            <Nav.Link href="/links">links</Nav.Link>
-            <NavDropdown title="Nikil" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/profile">My Profile</NavDropdown.Item>
+          {userInfo ? (
+            <Nav>
+              <Nav.Link href="/links">links</Nav.Link>
+              <NavDropdown title={`${userInfo.name}`} id="basic-nav-dropdown">
+                <NavDropdown.Item href="/profile">My Profile</NavDropdown.Item>
 
-              <NavDropdown.Divider />
-              <NavDropdown.Item onClick={logoutHandler}>
-                Logout
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={logoutHandler}>
+                  Logout
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          ) : (
+            <Nav.Link href="/login">login</Nav.Link>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

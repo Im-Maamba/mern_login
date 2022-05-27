@@ -1,10 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import thunk from "redux-thunk";
-import { userLoginReducer, userRegisterReducer } from "./reducers/userreducers";
+import {
+  userLoginReducer,
+  userRegisterReducer,
+  userUpdateReducer,
+} from "./reducers/userreducers";
 const reducer = {
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  userUpdate: userUpdateReducer,
 };
 const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
