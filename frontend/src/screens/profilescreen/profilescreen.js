@@ -49,6 +49,7 @@ const Profilescreen = () => {
         .then((data) => {
           console.log(data);
           setPic(data.url.toString());
+          console.log(pic);
         })
 
         .catch((err) => {

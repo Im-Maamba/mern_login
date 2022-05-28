@@ -12,6 +12,9 @@ const Header = () => {
     dispatch(logout());
     navigate("/");
   };
+  const profile = () => {
+    navigate("/profile");
+  };
   return (
     <Navbar collapseOnSelect expand="lg" bg="warning" variant="dark">
       <Container>
@@ -26,7 +29,9 @@ const Header = () => {
             <Nav>
               <Nav.Link href="/links">links</Nav.Link>
               <NavDropdown title={`${userInfo.name}`} id="basic-nav-dropdown">
-                <NavDropdown.Item href="/profile">My Profile</NavDropdown.Item>
+                <NavDropdown.Item href="#" onClick={profile}>
+                  My Profile
+                </NavDropdown.Item>
 
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={logoutHandler}>

@@ -23,5 +23,4 @@ const store = configureStore({
   initialState,
   middleware,
 });
-
 export default store;
