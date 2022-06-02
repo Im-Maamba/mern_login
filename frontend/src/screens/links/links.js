@@ -11,7 +11,7 @@ const Links = () => {
             <div>
               <h1 className="title">Under Construction👷‍♂️</h1>
               <p className="subtitle">
-                <a href="https://im-maamba.github.io/omnifood/" target="_blank">
+                <a href="#" target="_blank">
                   {" "}
                   <Button>click</Button> to view my static site created
                 </a>
